@@ -1,0 +1,43 @@
+name: Deploy iam-tool to the development stand
+on: workflow_dispatch
+permissions: {}
+env:
+  ENV_FILENAME: .env
+jobs:
+  deploy_iam-tool:
+    name: Deploy iam-tool
+    permissions:
+      contents: read
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Execute Docker Run via SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            docker stop iam-tool || true
+            docker rm iam-tool || true
+            docker network create iam-tool_net || true
+            docker run -d \
+              --name iam-tool \
+              --restart unless-stopped \
+              --network iam-tool_net \
+              --network database_net \
+              --network nginx_net \
+              -e KC_BOOTSTRAP_ADMIN_USERNAME=${{ secrets.KC_BOOTSTRAP_ADMIN_USERNAME }} \
+              -e KC_BOOTSTRAP_ADMIN_PASSWORD="${{ secrets.KC_BOOTSTRAP_ADMIN_PASSWORD }}" \
+              -e KC_DB_URL_DATABASE=${{ secrets.KC_DB_URL_DATABASE }} \
+              -e KC_DB_URL_HOST=${{ secrets.KC_DB_URL_HOST }} \
+              -e KC_DB_URL_PORT=${{ secrets.KC_DB_URL_PORT }} \
+              -e KC_DB_USERNAME=${{ secrets.KC_DB_USERNAME }} \
+              -e KC_DB_PASSWORD=${{ secrets.KC_DB_PASSWORD }} \
+              -e KC_HTTP_PORT=80 \
+              -e KC_HTTP_ENABLED=true \
+              -e KC_HOSTNAME=http://89.169.44.135/iam \
+              -e TZ=Europe/Moscow \
+              -v keycloak_data:/opt/keycloak/data \
+              dipdeepcode/keycloak \
+              start --optimized
