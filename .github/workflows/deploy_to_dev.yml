@@ -27,6 +27,9 @@ jobs:
               --network iam-tool_net \
               --network database_net \
               --network nginx_net \
+              --spi-theme--static-max-age=-1 \
+              --spi-theme--cache-themes=false \
+              --spi-theme--cache-templates=false \
               -e KC_BOOTSTRAP_ADMIN_USERNAME=${{ secrets.KC_BOOTSTRAP_ADMIN_USERNAME }} \
               -e KC_BOOTSTRAP_ADMIN_PASSWORD="${{ secrets.KC_BOOTSTRAP_ADMIN_PASSWORD }}" \
               -e KC_DB_URL_DATABASE=${{ secrets.KC_DB_URL_DATABASE }} \
@@ -39,5 +42,6 @@ jobs:
               -e KC_HOSTNAME=http://89.169.44.135/iam \
               -e TZ=Europe/Moscow \
               -v keycloak_data:/opt/keycloak/data \
+              -v /home/keycloak/themes/:/opt/keycloak/themes/
               dipdeepcode/keycloak \
               start --optimized
