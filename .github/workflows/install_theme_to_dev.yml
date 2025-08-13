@@ -1,0 +1,20 @@
+name: Install theme to the development stand
+on: workflow_dispatch
+permissions: {}
+jobs:
+  deploy_iam-tool:
+    name: Install theme
+    permissions:
+      contents: read
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Copy files via ssh password
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "theme/*"
+          target: "~/keycloak/themes"
+          strip_components: 1
