@@ -39,7 +39,7 @@ jobs:
               -e KC_HOSTNAME=http://89.169.44.135/iam \
               -e TZ=Europe/Moscow \
               -v keycloak_data:/opt/keycloak/data \
-              -v /home/github/keycloak/themes/:/opt/keycloak/themes/
+              -v /home/github/keycloak/themes/:/opt/keycloak/themes/ \
               dipdeepcode/keycloak \
               start --optimized \
               --spi-theme--static-max-age=-1 \
