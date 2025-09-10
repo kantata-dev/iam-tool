@@ -1,8 +1,8 @@
 <#import "template.ftl" as layout>
 
 <@layout.registrationLayout>
-    <@layout.form>
-        <div class="page-container">
+<@layout.form>
+<div class="page-container">
             <div class="page-card">
                 <div class="page-header">
                     <img src="${url.resourcesPath}/img/Title-home.png" alt="Title" class="title-image" />
@@ -22,7 +22,6 @@
                         <a href="${url.loginUrl}" class="btn-register">Войти</a>
                     </p>
                 </div>
-
             </div>
         </div>
     </@layout.form>
