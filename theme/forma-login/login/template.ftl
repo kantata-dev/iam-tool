@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кантата</title>
     <link rel="icon" type="image/png" href="${url.resourcesPath}/img/logoCantata.png"/>
-    <link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
+    <link rel="stylesheet" href="${url.resourcesPath}/css/new_styles.css" />
 </head>
 <body>
     <#if message?has_content>
