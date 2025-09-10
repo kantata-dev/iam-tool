@@ -42,12 +42,12 @@
          placeholder="Подтвердите пароль"
          required
        >
-        <button type="submit" class="btn-login">${msg("doRegister")}</button>
+        <button type="submit" class="btn-login">Зарегистрироваться</button>
       </form>
 
       <p class="register-text">
-        ${msg("doAlreadyHaveAccount")}
-        <a href="${url.loginUrl}" class="btn-register">${msg("doLogIn")}</a>
+        Уже есть аккаунт?
+        <a href="${url.loginUrl}" class="btn-register">Войти</a>
       </p>
     </div>
 
