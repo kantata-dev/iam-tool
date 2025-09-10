@@ -1,10 +1,6 @@
 <#import "template.ftl" as layout>
 
 <@layout.registrationLayout>
-<@layout.head>
-<link rel="icon" type="image/svg+xml" href="${url.resourcesPath}/img/logoCantata.png" />
-    </@layout.head>
-
     <@layout.form>
     <div class="page-container">
         <div class="page-card">
