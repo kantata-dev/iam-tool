@@ -1,29 +1,25 @@
-<#import "template.ftl" as layout>
-<@layout.registrationLayout isMainRegistration=false>
+<#macro registrationLayout>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кантата</title>
+    <#nested "head"/>
+    <link rel="icon" type="image/png" href="${url.resourcesPath}/img/logoCantata.png"/>
+    <link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
+</head>
+<body>
+<section class="form-block">
 
-<#nested "form">
-    <div class="page-container">
-        <div class="page-card">
+    <#if message?has_content>
+        <div class="kc-feedback-area">${message.summary?no_esc}</div>
+    </#if>
 
-            <div class="page-header">
-                <img src="${url.resourcesPath}/img/Title-home.png" alt="Title" class="title-image" />
-                <h1 class="text-styled">Регистрация (Кантата)</h1>
-            </div>
+    <#nested "form"/>
+</section>
+</body>
+</html>
+</#macro>
 
-            <div class="side">
-                <form id="kc-register-form" class="login-form" action="${url.registrationAction}" method="post">
-                    <input type="email" id="email" name="email" value="${register.formData.email!''}" placeholder="Электронная почта" required>
-                    <input type="password" id="password" name="password" placeholder="Пароль" required>
-                    <input type="password" id="password-confirm" name="password-confirm" placeholder="Подтвердите пароль" required>
-                    <button type="submit" class="btn-login">Зарегистрироваться</button>
-                </form>
-
-                <p class="register-text">
-                    Уже есть аккаунт?
-                    <a href="${url.loginUrl}" class="btn-register">Войти</a>
-                </p>
-            </div>
-
-        </div>
-    </div>
-</#nested>
+<#macro head></#macro>
+<#macro form></#macro>
