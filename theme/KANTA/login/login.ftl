@@ -36,7 +36,7 @@
             required
             autocomplete="off"
           >
-          <button type="submit" class="btn-login">${msg("doLogIn")}</button>
+          <button type="submit" class="btn-login">Войти</button>
         </form>
 
         <div class="register-text">
