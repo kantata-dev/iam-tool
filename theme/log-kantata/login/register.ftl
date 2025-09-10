@@ -1,11 +1,7 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout>
+<@layout.registrationLayout isMainRegistration=false>
 
-<@layout.headBlock>
-    <link rel="icon" type="image/svg+xml" href="${url.resourcesPath}/img/logoCantata.png" />
-</@layout.headBlock>
-
-<@layout.contentBlock>
+<#nested "form">
     <div class="page-container">
         <div class="page-card">
 
@@ -15,7 +11,7 @@
             </div>
 
             <div class="side">
-                <form id="kc-register-form" class="login-form" action="${url.registrationAction!''}" method="post">
+                <form id="kc-register-form" class="login-form" action="${url.registrationAction}" method="post">
                     <input type="email" id="email" name="email" value="${register.formData.email!''}" placeholder="Электронная почта" required>
                     <input type="password" id="password" name="password" placeholder="Пароль" required>
                     <input type="password" id="password-confirm" name="password-confirm" placeholder="Подтвердите пароль" required>
@@ -24,12 +20,10 @@
 
                 <p class="register-text">
                     Уже есть аккаунт?
-                    <a href="${url.loginUrl!''}" class="btn-register">Войти</a>
+                    <a href="${url.loginUrl}" class="btn-register">Войти</a>
                 </p>
             </div>
 
         </div>
     </div>
-</@layout.contentBlock>
-
-</@layout.registrationLayout>
+</#nested>

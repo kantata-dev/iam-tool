@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кантата</title>
-    <@headBlock />
+    <#nested "head"/>
     <link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
 </head>
-<body>
-    <@contentBlock />
+<body class="center-container">
+<section class="form-block">
+
+    <#if message?has_content>
+        <div class="kc-feedback-area">${message.summary?no_esc}</div>
+    </#if>
+
+    <#nested "form"/>
+</section>
 </body>
 </html>
 </#macro>
 
-<#macro headBlock></#macro>
-
-
-<#macro contentBlock></#macro>
+<#macro head></#macro>
+<#macro form></#macro>
