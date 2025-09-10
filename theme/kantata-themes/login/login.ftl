@@ -4,8 +4,11 @@
         <h1>Регистрация</h1>
 
         <form action="${url.registrationAction}" method="post">
+            <label>Логин:</label>
+            <input type="text" name="username" required>
+
             <label>Email:</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email">
 
             <label>Пароль:</label>
             <input type="password" name="password" required>
