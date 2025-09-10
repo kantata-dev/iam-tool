@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
 </head>
 <body>
-<section class="form-block">
-
     <#if message?has_content>
         <div class="kc-feedback-area">${message.summary?no_esc}</div>
     </#if>
 
     <#nested "form"/>
-</section>
 </body>
 </html>
 </#macro>
