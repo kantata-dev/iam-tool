@@ -19,13 +19,27 @@ html, body {
 .page-card {
     width: 100%;
     max-width: 420px;
-    height: 100vh;
+    height: auto;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     background: url('../img/bg-form.png') center/cover no-repeat;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fce4be;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0 0 0 2px #754414, inset 0 0 0 4px #f6a220, inset 0 0 0 6px #754414;
+    flex: none;
+    margin: 1rem;
 }
 
 /* Заголовок */
@@ -47,17 +61,6 @@ html, body {
     -webkit-text-stroke: 1px #754414;
 }
 
-/* Нижняя часть (форма в "side") */
-.side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    background-color: #fce4be;
-    border-radius: 50px 50px 0 0;
-    box-shadow: 0 0 0 2px #754414, inset 0 0 0 4px #f6a220, inset 0 0 0 6px #754414;
-}
 
 .login-form {
     display: flex;
