@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${pageTitle!'Кантата'}</title>
     <@headBlock />
-    <link rel="stylesheet" href="${url.resourcesPath}/css/style.css" />
+    <link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
 </head>
 <body>
     <@contentBlock />
