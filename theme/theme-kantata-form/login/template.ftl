@@ -1,3 +1,8 @@
+<#assign url = url!{"loginAction": "#", "registrationUrl": "#", "loginResetCredentialsUrl": "#", "resourcesPath": "/resources"} >
+<#assign login = login!{"username": ""}>
+<#assign register = register!{"formData": {"email": ""}}>
+<#assign message = message!{"summary": "", "type": ""}>
+
 <#macro registrationLayout bodyClass="" displayMessage=true>
 <!DOCTYPE html>
 <html lang="ru">
