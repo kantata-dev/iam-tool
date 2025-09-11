@@ -14,23 +14,22 @@
 <#if displayMessage && message?has_content>
     <div class="kc-feedback-area">${message.summary?no_esc}</div>
 </#if>
-    <div class="page-container">
-        <div class="page-card">
-            <div class="page-header">
-                <img src="${url.resourcesPath}/img/Title-home.png" alt="Title" class="title-image"/>
-                <h1 class="text-styled">
-                    <#if bodyClass == "login">Добро пожаловать в Кантата</#if>
-                    <#if bodyClass == "register">Регистрация (Кантата)</#if>
-                </h1>
-            </div>
-            <div class="side">
-                <#nested "form"/>
-            </div>
 
+<div class="page-container">
+    <div class="page-card">
+        <div class="page-header">
+            <img src="${url.resourcesPath}/img/Title-home.png" alt="Title" class="title-image"/>
+            <h1 class="text-styled">
+                <#if bodyClass == "login">Добро пожаловать в Кантата</#if>
+                <#if bodyClass == "register">Регистрация (Кантата)</#if>
+            </h1>
+        </div>
+        <div class="side">
+            <#nested/>
         </div>
     </div>
+</div>
 
 </body>
 </html>
 </#macro>
-<#macro form></#macro>
