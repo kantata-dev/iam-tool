@@ -9,6 +9,9 @@
     <link href="${url.resourcesPath}/css/styles.css" rel="stylesheet" />
 </head>
 <body>
+    <#if message?has_content>
+        <div class="kc-feedback-area">${message.summary?no_esc}</div>
+    </#if>
     <#nested "form"/>
 </body>
 </html>
