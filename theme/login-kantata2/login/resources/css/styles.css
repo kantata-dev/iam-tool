@@ -3,8 +3,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-family: "M PLUS Rounded 1c", Arial, sans-serif;;
     min-height: 100vh;
+    background-color: #f3f4f6;
 }
 
 /* Логин */
