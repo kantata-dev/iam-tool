@@ -10,7 +10,7 @@ html, body {
 
 /* Логин */
 body.login {
-    background: #f3f4f6 url('../img/bg-theme.png') center/cover no-repeat;
+    background: #f3f4f6;
 }
 
 /* Регистрация */
