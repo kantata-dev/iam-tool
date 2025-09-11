@@ -25,7 +25,7 @@
             </h1>
         </div>
         <div class="side">
-            <#nested/>
+            <#nested 'form'/>
         </div>
     </div>
 </div>
