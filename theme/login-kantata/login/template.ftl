@@ -1,4 +1,4 @@
-<#macro registrationLayout>
+<#macro registrationLayout bodyClass="" isMainRegistration=false displayInfo=false displayMessage=true>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
