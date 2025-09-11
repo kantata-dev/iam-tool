@@ -1,6 +1,5 @@
 <#import "registrationLayout.ftl" as layout>
 <@layout.registrationLayout bodyClass="register">
-    <@layout.form>
         <form id="kc-register-form" action="${url.registrationAction}" method="post" class="login-form">
             <input type="email" name="email" placeholder="Электронная почта" value="${register.formData.email!''}" required/>
             <input type="password" name="password" placeholder="Пароль" required/>
@@ -11,5 +10,4 @@
             Уже есть аккаунт?
             <a href="${url.loginUrl}" class="btn-register">Войти</a>
         </div>
-    </@layout.form>
 </@layout.registrationLayout>

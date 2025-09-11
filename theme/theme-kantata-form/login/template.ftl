@@ -11,7 +11,6 @@
 </head>
 <body class="${bodyClass}">
 
-<#-- Сообщения Keycloak -->
 <#if displayMessage && message?has_content>
     <div class="kc-feedback-area">${message.summary?no_esc}</div>
 </#if>
