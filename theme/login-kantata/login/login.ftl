@@ -1,5 +1,4 @@
 <#import "template.ftl" as layout>
-
 <@layout.registrationLayout>
     <@layout.form>
     <div class="page-container">
