@@ -15,3 +15,5 @@
 </body>
 </html>
 </#macro>
+<#macro head></#macro>
+<#macro form></#macro>
