@@ -11,10 +11,6 @@
 </head>
 <body class="${bodyClass}">
 
-<#if displayMessage && message?has_content>
-    <div class="kc-feedback-area">${message.summary?no_esc}</div>
-</#if>
-
 <div class="page-container">
     <div class="page-card">
         <div class="page-header">
