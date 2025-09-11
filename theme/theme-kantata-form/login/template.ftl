@@ -1,5 +1,3 @@
-<#assign social = social!{"providers": []}>
-
 <#macro registrationLayout bodyClass="" displayMessage=true>
 <!DOCTYPE html>
 <html lang="ru">
@@ -17,8 +15,6 @@
 <#if displayMessage && message?has_content>
     <div class="kc-feedback-area">${message.summary?no_esc}</div>
 </#if>
-
-<section class="form-block">
     <div class="page-container">
         <div class="page-card">
             <div class="page-header">
@@ -28,34 +24,14 @@
                     <#if bodyClass == "register">Регистрация (Кантата)</#if>
                 </h1>
             </div>
-
             <div class="side">
                 <#nested "form"/>
-
-                <#if social.providers?has_content>
-                <div class="register-text">
-                    <div class="group-title">Или авторизуйтесь через:</div>
-                    <div id="kc-social-providers">
-                        <ul>
-                            <#list social.providers as p>
-                                <li>
-                                    <a href="${p.loginUrl}" id="zocial-${p.alias}" class="login_social">
-                                        <img src="${url.resourcesPath}/img/ico_${p.alias}.png" alt="${p.alias}"/>
-                                    </a>
-                                </li>
-                            </#list>
-                        </ul>
-                    </div>
-                </div>
-                </#if>
             </div>
 
         </div>
     </div>
-</section>
 
 </body>
 </html>
 </#macro>
-
 <#macro form></#macro>
