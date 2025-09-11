@@ -1,15 +1,27 @@
-<#import "registrationLayout.ftl" as layout>
+<#import "template.ftl" as layout>
 
 <@layout.registrationLayout bodyClass="register">
-    <form id="kc-register-form" action="${url.registrationAction!''}" method="post" class="login-form">
-        <input type="email" name="email" placeholder="Электронная почта" value="${register.formData.email!''}" required/>
-        <input type="password" name="password" placeholder="Пароль" required/>
-        <input type="password" name="password-confirm" placeholder="Подтвердите пароль" required/>
-        <button type="submit" class="btn-login">Зарегистрироваться</button>
-    </form>
+    <#nested "form">
+        <form id="kc-form-register" action="${url.registrationAction!''}" method="post" class="register-form">
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Логин" required />
+            </div>
 
-    <div class="register-text">
-        Уже есть аккаунт?
-        <a href="${url.loginUrl!''}" class="btn-register">Войти</a>
-    </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Пароль" required />
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-register">Зарегистрироваться</button>
+            </div>
+
+            <div class="form-links">
+                <a href="${url.loginUrl}">Уже есть аккаунт? Войти</a>
+            </div>
+        </form>
+    </#nested>
 </@layout.registrationLayout>
