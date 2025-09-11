@@ -1,4 +1,4 @@
-#macro registrationLayout bodyClass="" displayMessage=true displayRequiredFields=false>
+#macro registrationLayout bodyClass="" displayMessage=true displayRequiredFields=false displayInfo=false>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,7 +25,17 @@
         </div>
 
         <div class="side">
+            <#-- Секция header -->
+            <#if nested??><#nested "header"></#if>
+
+            <#-- Секция form -->
             <#nested "form">
+
+            <#-- Секция info -->
+            <#if nested??><#nested "info"></#if>
+
+            <#-- Секция socialProviders -->
+            <#if nested??><#nested "socialProviders"></#if>
         </div>
     </div>
 </div>
