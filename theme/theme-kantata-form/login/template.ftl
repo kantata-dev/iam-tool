@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayMessage=true>
+#macro registrationLayout bodyClass="" displayMessage=true displayRequiredFields=false>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,9 +10,8 @@
 </head>
 <body class="${bodyClass}">
 
-<#-- Сообщение об ошибке / успехе -->
-<#if displayMessage && message?has_content>
-    <div class="kc-feedback-area">${message.summary?no_esc}</div>
+<#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
+    <div class="kc-feedback-area">${message.summary}</div>
 </#if>
 
 <div class="page-container">
@@ -26,7 +25,7 @@
         </div>
 
         <div class="side">
-            <#nested "form"/>
+            <#nested "form">
         </div>
     </div>
 </div>
