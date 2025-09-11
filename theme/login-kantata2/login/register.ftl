@@ -1,5 +1,6 @@
 <#import "registrationLayout.ftl" as layout>
-<@layout.registrationLayout bodyClass="register" displayMessage=true>
+<@layout.registrationLayout bodyClass="register">
+<@layout.form>
     <div class="page-container">
         <div class="page-card">
             <div class="page-header">
@@ -23,4 +24,5 @@
 
         </div>
     </div>
+</@layout.form>
 </@layout.registrationLayout>
